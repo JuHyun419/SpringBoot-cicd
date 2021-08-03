@@ -15,10 +15,10 @@ then
   echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다." >> /home/ec2-user/deploy.log
 else
   echo "> kill -15 $CURRENT_PID"
-  kill -15 $CURRENT_PID
+  sudo kill -15 $CURRENT_PID
   sleep 7
 fi
 
 DEPLOY_JAR=$DEPLOY_PATH$JAR_NAME
 echo "> DEPLOY_JAR 배포"    >> /home/ec2-user/deploy.log
-nohup java -jar $DEPLOY_JAR >> /home/ec2-user/deploy.log 2>/home/ec2-user/deploy_err.log &
+sudo nohup java -jar $DEPLOY_JAR >> /home/ec2-user/deploy.log 2>/home/ec2-user/deploy_err.log &
