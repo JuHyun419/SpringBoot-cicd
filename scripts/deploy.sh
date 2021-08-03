@@ -22,4 +22,4 @@ fi
 DEPLOY_JAR=$DEPLOY_PATH$JAR_NAME
 echo "> DEPLOY_JAR 배포" # /home/ec2-user/deploy.log
 #nohup java -jar $DEPLOY_JAR /dev/null 2>&1 &
-nohup java -jar $DEPLOY_JAR 2>/home/ec2-user/deploy_err.log &
+nohup java -jar $DEPLOY_JAR > /dev/null 2> /dev/null < /dev/null &
