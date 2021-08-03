@@ -14,5 +14,5 @@ permissions:
 hooks:
   ApplicationStart:
     - location: scripts/deploy.sh # ApplicationStart 단계에서 location에 위치한 파일 실행
-      timeout: 120
+      timeout: 90
       runas: ec2-user
